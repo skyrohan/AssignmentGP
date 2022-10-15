@@ -1,0 +1,12 @@
+<article class="postcard light blue">
+    <a class="postcard__img_link" href="#">
+      <img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
+    </a>
+    <div class="postcard__text t-dark">
+      <h1 class="postcard__title blue"><a href="#">{{title}}</a></h1>
+      <div class="postcard__bar"></div>
+      <div class="postcard__preview-txt">{{body}} </div>
+      <app-userdetails [user_id]="user_id"></app-userdetails>
+      <button *ngIf="comment" class="btn btn-primary" (click)="commentsOfPost(title,body,user_id,postId)">Comments</button>
+    </div>
+  </article>

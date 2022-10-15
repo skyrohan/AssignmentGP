@@ -1,0 +1,7 @@
+<ul class="postcard__tagbox" *ngFor="let user of userDetail">
+    <li class="tag__item"><i class="fa fa-user mr-2"></i>{{user.name}}</li>
+    <li class="tag__item"><i class="fa fa-envelope mr-2"></i>{{user.email}}</li>
+    <li class="tag__item play blue">
+        <a href="#"><i class="fa fa-person mr-2"></i>{{user.gender}}</a>
+    </li>
+</ul>

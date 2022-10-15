@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+
+<body>
+    <section class="dark">
+        <div class="container py-2">
+            <div class="h1 text-center text-dark" id="pageHeaderTitle">Posts</div>
+            <div *ngFor="let post of postArray">
+                <app-postcard [title]="post.title" [postId]="post.id" [body]="post.body" [user_id]="post.user_id" [comment]="true">
+                </app-postcard>
+            </div>
+        </div>
+    </section>
+
+    <div class="paginationContainer">
+    <nav aria-label="Page navigation">
+
+        <ul class="pagination pagination-lg">
+            <li class="page-item">
+                <button class="page-link" (click)="onPrevPages()" aria-label="Previous"><span aria-hidden="true">&laquo;</span></button>
+            </li>
+            <li class="page-item" *ngFor="let num of listArray">
+                <button class="page-link" (click)="onPageSubmit(num)">{{num}}</button>
+            </li>
+            <li class="page-item">
+                <button class="page-link" (click)="onNextPages()" aria-label="Next"><span aria-hidden="true">&raquo;</span></button>
+            </li>
+        </ul>
+    </nav>
+    </div>
+</body>
+
+</html>

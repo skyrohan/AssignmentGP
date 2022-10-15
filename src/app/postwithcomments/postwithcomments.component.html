@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+
+<body>
+    <section class="light">
+        <div class="container py-2">
+            <div class="h1 text-center text-dark" id="pageHeaderTitle">Posts With Comments</div>
+            <app-postcard [title]="title" [postId]="postId" [body]="body" [user_id]="user_id" [comment]="false">
+            </app-postcard>
+        </div>
+
+        <div class="container py-2">
+            <div class="h1 text-center text-dark" id="pageHeaderTitle">--Comments--</div>
+            <div class="h1 text-center text-dark" id="pageHeaderTitle" *ngIf="commentArray.length == 0">
+                Comments not available
+            </div>
+            <article class="postcard light blue" *ngFor="let comment of commentArray">
+                <div class="postcard__text t-dark">
+                    <h1 class="postcard__title blue"><a>{{comment.body}}</a></h1>
+                    <ul class="postcard__tagbox">
+                        <li class="tag__item"><i class="fa fa-user mr-2"></i>{{comment.name}}</li>
+                        <li class="tag__item"><i class="fa fa-envelope mr-2"></i>{{comment.email}}</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+
+    </section>
+</body>
+
+</html>
